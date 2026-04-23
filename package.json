@@ -1,0 +1,11 @@
+{
+    "name": "WKCH",
+    "version": "0.1.0",
+    "description": "WKCH - blog for a sighthungs in poland",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Wojciech S",
+    "license": "ISC"
+}
