@@ -23,5 +23,12 @@ const { Content } = await render(post);
     {post.data.description && <p>{post.data.description}</p>}
     {post.data.heroImage && <img src={post.data.heroImage} alt="" />}
     <Content />
+    {post.data.gallery && post.data.gallery.length > 0 && (
+      <div class="gallery">
+        {post.data.gallery.map(item => (
+          <img src={item.image} alt={item.alt ?? ''} />
+        ))}
+      </div>
+    )}
   </article>
 </Layout>

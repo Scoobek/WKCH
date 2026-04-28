@@ -32,4 +32,16 @@ collections:
                 widget: "image",
                 required: false,
             }
+          - label: "Gallery"
+            name: "gallery"
+            widget: "list"
+            required: false
+            fields:
+                - { label: "Image", name: "image", widget: "image" }
+                - {
+                      label: "Alt text",
+                      name: "alt",
+                      widget: "string",
+                      required: false,
+                  }
           - { label: "Body", name: "body", widget: "markdown" }
