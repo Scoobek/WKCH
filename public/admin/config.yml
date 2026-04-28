@@ -36,6 +36,7 @@ collections:
             name: "gallery"
             widget: "list"
             required: false
+            collapsed: false
             fields:
                 - { label: "Image", name: "image", widget: "image" }
                 - {
