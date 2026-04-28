@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
 ---
 
 <Layout title={post.data.title}>
@@ -32,3 +33,20 @@ const { Content } = await render(post);
     )}
   </article>
 </Layout>
+
+<style>
+  // temporary
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+</style>
