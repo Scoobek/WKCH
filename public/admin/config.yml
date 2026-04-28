@@ -12,26 +12,37 @@ locale: "pl"
 
 collections:
     - name: "posts"
-      label: "Blog Posts"
-      label_singular: "Blog Post"
+      label: "Wpisy (Polski)"
+      label_singular: "Wpis"
       folder: "src/content/posts"
+      create: true
+      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      fields:
+          - { label: "Tytuł", name: "title", widget: "string" }
+          - { label: "Data publikacji", name: "pubDate", widget: "datetime" }
+          - { label: "Opis", name: "description", widget: "string", required: false }
+          - { label: "Zdjęcie główne", name: "heroImage", widget: "image", required: false }
+          - label: "Galeria"
+            name: "gallery"
+            widget: "list"
+            required: false
+            collapsed: false
+            fields:
+                - { label: "Zdjęcie", name: "image", widget: "image" }
+                - { label: "Opis alternatywny", name: "alt", widget: "string", required: false }
+          - { label: "Treść", name: "body", widget: "markdown" }
+
+    - name: "posts-en"
+      label: "Posts (English)"
+      label_singular: "Post"
+      folder: "src/content/posts-en"
       create: true
       slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
       fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Publish Date", name: "pubDate", widget: "datetime" }
-          - {
-                label: "Description",
-                name: "description",
-                widget: "string",
-                required: false,
-            }
-          - {
-                label: "Cover Image",
-                name: "heroImage",
-                widget: "image",
-                required: false,
-            }
+          - { label: "Description", name: "description", widget: "string", required: false }
+          - { label: "Cover Image", name: "heroImage", widget: "image", required: false }
           - label: "Gallery"
             name: "gallery"
             widget: "list"
@@ -39,10 +50,5 @@ collections:
             collapsed: false
             fields:
                 - { label: "Image", name: "image", widget: "image" }
-                - {
-                      label: "Alt text",
-                      name: "alt",
-                      widget: "string",
-                      required: false,
-                  }
+                - { label: "Alt text", name: "alt", widget: "string", required: false }
           - { label: "Body", name: "body", widget: "markdown" }
